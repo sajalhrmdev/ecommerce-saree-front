@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #fffdf9;
+    color: #1a1a2e;
+    font-family: 'Inter', sans-serif;
+  }
+  ::selection {
+    @apply bg-gold-300 text-charcoal;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-cream;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold-500;
+  }
+}
+
+@layer components {
+  .premium-divider {
+    @apply w-20 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto;
+  }
+  .gold-border {
+    @apply border border-gold-300/30;
+  }
+  .premium-shadow {
+    box-shadow: 0 4px 20px rgba(212, 165, 52, 0.08);
+  }
+  .premium-card {
+    @apply bg-white rounded-xl gold-border premium-shadow transition-all duration-500;
+  }
+  .premium-card:hover {
+    box-shadow: 0 8px 40px rgba(212, 165, 52, 0.15);
+    @apply -translate-y-1;
+  }
+  .gold-btn {
+    @apply bg-gradient-to-r from-gold-500 to-gold-700 text-white px-8 py-3 rounded-lg font-semibold 
+           hover:from-gold-600 hover:to-gold-800 transition-all duration-300 
+           shadow-lg shadow-gold-500/25 hover:shadow-xl hover:shadow-gold-500/30;
+  }
+  .outline-btn {
+    @apply border-2 border-gold-400 text-gold-700 px-8 py-3 rounded-lg font-semibold 
+           hover:bg-gold-50 transition-all duration-300;
+  }
+  .section-title {
+    @apply font-serif text-4xl md:text-5xl font-bold text-center;
+  }
+  .section-subtitle {
+    @apply text-gray-500 text-center max-w-2xl mx-auto mt-4 text-lg;
+  }
+}
